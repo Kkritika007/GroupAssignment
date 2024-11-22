@@ -1,0 +1,142 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Light gray background for the entire page */
+  }
+  
+  /* Header styling */
+  header {
+    padding: 2rem 0;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  
+  /* Main content styling */
+  main {
+    padding: 3rem 0;
+    text-align: center;
+  }
+  
+  /* Alert box styling */
+  .alert {
+    font-size: 1.25rem;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Buttons styling */
+  button, .btn {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect on buttons */
+  button:hover, .btn:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Styling for the cancel page */
+  .bg-danger {
+    background-color: #dc3545 !important; /* Red background for error page */
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  /* Styling for the success page */
+  .bg-success {
+    background-color: #28a745 !important; /* Green background for success page */
+  }
+  
+  .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 1.5rem 0;
+  }
+  
+  /* Container to make sure the content is centered */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* Footer text styles */
+  footer p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  /* Custom spacing for alert box */
+  .alert-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  /* Styling for the buttons in main content */
+  a.btn {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  a.btn-danger {
+    background-color: #dc3545;
+  }
+  
+  a.btn-success {
+    background-color: #28a745;
+  }
+  
+  /* Button focus and active states */
+  a.btn:focus, a.btn:active {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Hover effect on images (index.hbs) */
+  .card-img-top {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect on image: scale and shadow */
+  .card-img-top:hover {
+    transform: scale(1.1); /* Slightly zoom in on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  }
+  
+  /* Responsive text sizes for smaller screens */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .alert {
+      font-size: 1.1rem;
+    }
+  
+    .btn {
+      font-size: 1rem;
+    }
+  }
+  

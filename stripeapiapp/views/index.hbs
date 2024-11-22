@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="bg-primary text-white text-center py-4">
+    <h1>{{title}}</h1>
+  </header>
+
+  <main class="container my-5">
+    <div class="row">
+      <!-- Product 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="/images/image.png" class="card-img-top" alt="Bluetooth Headphones">
+          <div class="card-body">
+            <h5 class="card-title">Bluetooth Headphones</h5>
+            <p class="card-text">$49.99</p>
+            <button id="buy-product-1" class="btn btn-primary">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="/images/image2.png" class="card-img-top" alt="Wireless speaker">
+          <div class="card-body">
+            <h5 class="card-title">Wireless speaker</h5>
+            <p class="card-text">$19.99</p>
+            <button id="buy-product-2" class="btn btn-primary">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="/images/image3.png" class="card-img-top" alt="Smartwatch">
+          <div class="card-body">
+            <h5 class="card-title">Smartwatch</h5>
+            <p class="card-text">$99.99</p>
+            <button id="buy-product-3" class="btn btn-primary">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="/images/image4.png" class="card-img-top" alt="Portable Charger">
+          <div class="card-body">
+            <h5 class="card-title">Portable Charger</h5>
+            <p class="card-text">$29.99</p>
+            <button id="buy-product-4" class="btn btn-primary">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 (New) -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="/images/image5.png" class="card-img-top" alt="Laptop Stand">
+          <div class="card-body">
+            <h5 class="card-title">Laptop Stand</h5>
+            <p class="card-text">$39.99</p>
+            <button id="buy-product-5" class="btn btn-primary">Buy</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-light text-center py-4">
+    <p>&copy; 2024 Demo Store</p>
+  </footer>
+
+  <!-- Stripe JS -->
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  <!-- jQuery (full version) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    const stripe = Stripe("{{STRIPE_PUBLIC_KEY}}");  // Public key passed from the server
+
+    // Button actions for each product
+    document.getElementById('buy-product-1').addEventListener('click', () => {
+      fetch('/create-checkout-session', { method: 'POST' })
+        .then((response) => response.json())
+        .then((sessionId) => stripe.redirectToCheckout({ sessionId: sessionId.id }))
+        .catch((error) => console.error('Error:', error));
+    });
+
+    document.getElementById('buy-product-2').addEventListener('click', () => {
+      fetch('/create-checkout-session', { method: 'POST' })
+        .then((response) => response.json())
+        .then((sessionId) => stripe.redirectToCheckout({ sessionId: sessionId.id }))
+        .catch((error) => console.error('Error:', error));
+    });
+
+    document.getElementById('buy-product-3').addEventListener('click', () => {
+      fetch('/create-checkout-session', { method: 'POST' })
+        .then((response) => response.json())
+        .then((sessionId) => stripe.redirectToCheckout({ sessionId: sessionId.id }))
+        .catch((error) => console.error('Error:', error));
+    });
+
+    document.getElementById('buy-product-4').addEventListener('click', () => {
+      fetch('/create-checkout-session', { method: 'POST' })
+        .then((response) => response.json())
+        .then((sessionId) => stripe.redirectToCheckout({ sessionId: sessionId.id }))
+        .catch((error) => console.error('Error:', error));
+    });
+
+    // Button action for new product (Product 5)
+    document.getElementById('buy-product-5').addEventListener('click', () => {
+      fetch('/create-checkout-session', { method: 'POST' })
+        .then((response) => response.json())
+        .then((sessionId) => stripe.redirectToCheckout({ sessionId: sessionId.id }))
+        .catch((error) => console.error('Error:', error));
+    });
+  </script>
+</body>
+</html>
