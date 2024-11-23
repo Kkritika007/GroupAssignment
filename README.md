@@ -80,7 +80,7 @@ project-root/
 │   ├── index.hbs           # Homepage with product listings
 │   ├── success.hbs         # Payment success page
 │   └── cancel.hbs          # Payment failure page
-├── app.js                  # Main server file
+├── server.js                  # Main server file
 ├── .env                    # Environment variables (not shared)
 ├── package.json            # Project metadata and dependencies
 └── README.md               # Project documentation (this file)
